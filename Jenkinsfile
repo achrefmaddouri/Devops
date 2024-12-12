@@ -13,7 +13,7 @@ pipeline {
         stage('Git') {
             steps {
                 echo 'Pulling from GitHub'
-                git branch: 'main', url: 'https://github.com/achrefmaddouri/Devops.git'
+                git branch: 'master', url: 'https://github.com/achrefmaddouri/Devops.git'
             }
         }
 
