@@ -153,12 +153,12 @@
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <url>http://192.168.50.10:8081/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
+   <distributionManagement>
+    <repository>
+        <id>nexus-releases</id>
+        <url>http://192.168.50.10:8081/repository/maven-releases/</url>
+    </repository>
+</distributionManagement>
 
 
 
