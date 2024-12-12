@@ -1,0 +1,36 @@
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql-event
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=securepassword
+      - MYSQL_DATABASE=event
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mynetwork
+
+  eventsproject-app:
+    image: bouchrif/event:latest
+    container_name: eventproject-app
+    ports:
+      - "8082:8082"
+    restart: always
+    depends_on:
+      - mysql-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/eventsProject?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=securepassword
+    networks:
+      - mynetwork
+
+volumes:
+  db_data:
+
+networks:
+  mynetwork:
+    driver: bridge
