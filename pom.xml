@@ -40,7 +40,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.4.32.Final</version> <!-- or any version you prefer -->
+</dependency>
         <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
