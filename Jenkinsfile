@@ -75,7 +75,7 @@ pipeline {
 
         stage('Docker Compose') {
             steps {
-                sh '/usr/local/bin/docker-compose up -d'
+                sh 'docker-compose up -d'
                 sh 'sleep 60' // Adjust the sleep time based on your application's startup time
             }
         }
