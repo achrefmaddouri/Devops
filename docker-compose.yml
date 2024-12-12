@@ -1,7 +1,7 @@
 services:
   mysql-db:
     image: mysql:latest
-    container_name: mysql-eventss
+    container_name: mysql-eventdevops
     ports:
       - "3306:3306"
     restart: always
@@ -15,7 +15,7 @@ services:
 
   eventsproject-app:
     image: bouchrif/event:latest
-    container_name: eventproject-appss
+    container_name: eventsproject-apps
     ports:
       - "8082:8082"
     restart: always
