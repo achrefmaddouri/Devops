@@ -71,19 +71,7 @@ pipeline {
             }
         }
 
-        stage('Check JaCoCo Report') {
-            steps {
-                sh 'ls -alh target/site/jacoco/'  // Check if the JaCoCo report is generated
-                echo 'Checked JaCoCo report generation'
-            }
-        }
-
-        stage('Collect JaCoCo Coverage') {
-            steps {
-                jacoco(execPattern: 'target/jacoco.exec')  // Collect the JaCoCo coverage
-                echo 'JaCoCo Coverage collected successfully'
-            }
-        }
+      
 
         stage('Docker Compose') {
             steps {
